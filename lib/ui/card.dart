@@ -36,7 +36,7 @@ class _AppCardState extends State<AppCard> {
     child: AnimatedContainer(
       duration: AppAnimate.duration,
       curve: AppAnimate.curve,
-      height: _initial ? 100 : 500,
+      height: _initial ? 100 : 200,
       margin: const EdgeInsets.fromLTRB(18, 18, 18, 0),
       padding: const EdgeInsets.all(30),
       decoration: BoxDecoration(
@@ -68,17 +68,18 @@ class _AppCardState extends State<AppCard> {
             ),
           ),
 
-          // Number
+          // Terrain
           AnimatedOpacity(
             opacity: _initial ? 0 : 1,
             duration: AppAnimate.duration,
             curve: AppAnimate.curve,
-            
-            child: _initial ? null : Container(
-              alignment: Alignment.centerLeft,
-              margin: const EdgeInsets.only(top: 10),
+            child: AnimatedContainer(
+              duration: AppAnimate.duration,
+              curve: AppAnimate.curve,
+              height: _initial ? 0 : 60,
+              margin: EdgeInsets.only(top: 10),
               child: Text(
-                '${widget.copy}',
+                'Terrain: ${widget.copy}',
                 style: Theme.of(context).textTheme.body1,
               ),
             ),

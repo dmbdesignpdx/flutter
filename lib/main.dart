@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter App',
       theme: AppTheme.main,
-      home: Home('Flutter App'),
+      home: Home('Planets'),
     );
   }
 }

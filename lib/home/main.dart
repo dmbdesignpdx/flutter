@@ -12,7 +12,12 @@ class Home extends StatelessWidget {
   Scaffold build(BuildContext context) => Scaffold(
     backgroundColor: Colors.grey[200],
     appBar: AppBar(
-      title: Text(title),
+      title: Text(
+        title,
+        style: TextStyle(
+          fontFamily: 'Roboto',
+        ),
+      ),
     ),
     body: HomeBody(),
   );
