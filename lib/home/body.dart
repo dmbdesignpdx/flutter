@@ -36,7 +36,9 @@ class _HomeBody extends State<HomeBody> {
           list.add(
             AppCard(
               title: item['name'],
-              copy: item['terrain'],
+              terrain: item['terrain'],
+              climate: item['climate'],
+              population: item['population'],
               key: UniqueKey(),
             )
           );
