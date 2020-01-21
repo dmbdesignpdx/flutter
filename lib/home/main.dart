@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'body.dart';
 
+
 // Home State
 class Home extends StatelessWidget {
   const Home(this.title);
@@ -10,7 +11,7 @@ class Home extends StatelessWidget {
 
   @override
   Scaffold build(BuildContext context) => Scaffold(
-    backgroundColor: Colors.grey[200],
+    backgroundColor: Colors.grey[100],
     appBar: AppBar(
       title: Text(
         title,
@@ -22,4 +23,3 @@ class Home extends StatelessWidget {
     body: HomeBody(),
   );
 }
-
