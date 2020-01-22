@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 
 
+// Standard Animation Styles
 @immutable
 class AppAnimate {
-  static final Object duration = Duration(milliseconds: 300);
-  static final Object curve = Curves.easeOutSine;
+  static const int time = 300;
+  static const Duration duration = Duration(milliseconds: time);
+  static const Cubic curve = Curves.easeOutSine;
 }

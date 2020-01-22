@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 
 
 class FAB extends StatelessWidget {
-  const FAB(this.increment);
-
   final Function increment;
+
+  const FAB(this.increment);
 
   @override
   FloatingActionButton build(BuildContext context) {

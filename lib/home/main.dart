@@ -3,11 +3,11 @@ import 'package:flutter/material.dart';
 import 'body.dart';
 
 
-// Home State
+// Home
 class Home extends StatelessWidget {
-  const Home(this.title);
-
   final String title;
+
+  const Home(this.title);
 
   @override
   Scaffold build(BuildContext context) => Scaffold(
@@ -20,6 +20,6 @@ class Home extends StatelessWidget {
         ),
       ),
     ),
-    body: HomeBody(),
+    body: HomeBody(key: UniqueKey()),
   );
 }

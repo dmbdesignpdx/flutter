@@ -5,17 +5,22 @@ import '../utils/get.dart';
 import '../ui/card.dart';
 
 
+// HomeBody
 class HomeBody extends StatefulWidget {
+  const HomeBody({ @required Key key }) : super(key: key);
+
   @override
   State createState() => _HomeBody();
 }
 
+// HomeBody State
 class _HomeBody extends State<HomeBody> {
   Future<Map> planets;
 
   @override
   void initState() {
     super.initState();
+    
     planets = Get('https://swapi.co/api/planets').jsonData; 
   }
 
@@ -23,13 +28,17 @@ class _HomeBody extends State<HomeBody> {
   Widget build(BuildContext context) => SafeArea(
     child: FutureBuilder(
       future: planets,
-      builder: (context, snapshot) {
+      builder: (BuildContext context, AsyncSnapshot snapshot) {
         if (!snapshot.hasData) {
-          return Text('Loading...');
+          // Loader
+          // ToDo: create loader
+          return Center(child: Text('Loading...'));
         } else if (snapshot.hasError) {
-          return Text('There was an error, try again.');
+          // Error
+          return Center(child: Text('There was an error, try again.'));
         }
 
+        // Planet List
         List<Widget> list = [];
 
         snapshot.data['results'].forEach((item) {

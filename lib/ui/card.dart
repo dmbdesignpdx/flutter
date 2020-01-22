@@ -23,22 +23,22 @@ class AppCard extends StatefulWidget {
 }
 
 // AppCard State
-class _AppCardState extends State<AppCard> with SingleTickerProviderStateMixin {
+class _AppCardState extends State<AppCard> {
   // States
   bool _initial = true;
   bool _showText = false;
 
   // State Methods
   void _cardExpand() {
-    if (_initial) {
-      Future.delayed(Duration(milliseconds: 300), () {
+    if (_showText) {
+      setState(() {
+        _showText = false;
+      });
+    } else {
+      Future.delayed(AppAnimate.duration, () {
         setState(() {
           _showText = true;
         });
-      });
-    } else {
-      setState(() {
-        _showText = false;
       });
     }
     
@@ -67,9 +67,9 @@ class _AppCardState extends State<AppCard> with SingleTickerProviderStateMixin {
         borderRadius: BorderRadius.circular(6),
         boxShadow: <BoxShadow>[
           BoxShadow(
-            color: const Color(0x22000044),
-            offset: _initial ? const Offset(0, 0) : const Offset(0, 6),
-            blurRadius: _initial ? 0 : 12,
+            color: _initial ? const Color(0x00000044) : const Color(0x22000044),
+            offset: _initial ? const Offset(0, 1) : const Offset(0, 6),
+            blurRadius: _initial ? 2 : 12,
           ),
         ],
       ),

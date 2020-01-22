@@ -12,8 +12,8 @@ class Get {
 
     if (response.statusCode == 200) {
       return json.decode(response.body);
-    } else {
-      throw Exception('there was an error');
     }
+    
+    return null;
   }
 }

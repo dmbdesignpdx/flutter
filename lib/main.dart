@@ -4,10 +4,6 @@ import 'utils/theme.dart';
 import 'home/main.dart';
 
 
-// Main
-void main() => runApp(MyApp());
-
-
 // App
 class MyApp extends StatelessWidget {
   @override
@@ -20,3 +16,7 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+
+
+// Main
+void main() => runApp(MyApp());
