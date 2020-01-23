@@ -59,7 +59,7 @@ class _AppCardState extends State<AppCard> {
     child: AnimatedContainer(
       duration: AppAnimate.duration,
       curve: AppAnimate.curve,
-      height: _initial ? 90 : 260,
+      height: _initial ? 120 : 270,
       margin: const EdgeInsets.fromLTRB(18, 18, 18, 0),
       padding: const EdgeInsets.all(30),
       decoration: BoxDecoration(
@@ -67,7 +67,7 @@ class _AppCardState extends State<AppCard> {
         borderRadius: BorderRadius.circular(6),
         boxShadow: <BoxShadow>[
           BoxShadow(
-            color: _initial ? const Color(0x00000044) : const Color(0x22000044),
+            color: _initial ? const Color(0x00000044) : const Color(0x33000044),
             offset: _initial ? const Offset(0, 1) : const Offset(0, 6),
             blurRadius: _initial ? 2 : 12,
           ),
@@ -105,29 +105,50 @@ class _AppCardState extends State<AppCard> {
                   // Terrain
                   Container(
                     margin: const EdgeInsets.only(top: 15),
-                    child: Text(
-                      'Terrain: ${widget.terrain}',
-                      style: Theme.of(context).textTheme.body1,
-                      textAlign: TextAlign.start,
+                    child: RichText(
+                      text: TextSpan(
+                        style: Theme.of(context).textTheme.body1,
+                        children: <TextSpan>[
+                          TextSpan(
+                            style: TextStyle(fontWeight: FontWeight.w700),
+                            text: 'Terrain: ',
+                          ),
+                          TextSpan(text: '${widget.terrain}'),
+                        ]
+                      ),
                     ),
                   ),
 
                   // Climate
                   Container(
                     margin: const EdgeInsets.only(top: 15),
-                    child: Text(
-                      'Climate: ${widget.climate}',
-                      style: Theme.of(context).textTheme.body1,
-                      textAlign: TextAlign.start,
+                    child: RichText(
+                      text: TextSpan(
+                        style: Theme.of(context).textTheme.body1,
+                        children: <TextSpan>[
+                          TextSpan(
+                            style: TextStyle(fontWeight: FontWeight.w700),
+                            text: 'Climate: ',
+                          ),
+                          TextSpan(text: '${widget.climate}'),
+                        ]
+                      ),
                     ),
                   ),
                   // Climate
                   Container(
                     margin: const EdgeInsets.only(top: 15),
-                    child: Text(
-                      'Population: ${widget.population}',
-                      style: Theme.of(context).textTheme.body1,
-                      textAlign: TextAlign.start,
+                    child: RichText(
+                      text: TextSpan(
+                        style: Theme.of(context).textTheme.body1,
+                        children: <TextSpan>[
+                          TextSpan(
+                            style: TextStyle(fontWeight: FontWeight.w700),
+                            text: 'Population: ',
+                          ),
+                          TextSpan(text: '${widget.population}'),
+                        ]
+                      ),
                     ),
                   ),
                 

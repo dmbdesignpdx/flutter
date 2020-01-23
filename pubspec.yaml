@@ -14,7 +14,7 @@ description: A new Flutter project.
 version: 1.0.0+1
 
 environment:
-  sdk: ">=2.3.0 <3.0.0"
+  sdk: ">=2.6.0 <3.0.0"
 
 dependencies:
   flutter:
@@ -41,11 +41,6 @@ flutter:
           style: normal
         - asset: 'fonts/SpaceMono-Bold.ttf'
           weight: 700
-          style: normal
-    - family: Major
-      fonts:
-        - asset: 'fonts/MajorMonoDisplay-Regular.ttf'
-          weight: 400
           style: normal
 
   # To add assets to your application, add an assets section, like this:

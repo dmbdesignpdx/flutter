@@ -7,11 +7,9 @@ class FAB extends StatelessWidget {
   const FAB(this.increment);
 
   @override
-  FloatingActionButton build(BuildContext context) {
-    return FloatingActionButton(
-      onPressed: increment,
-      tooltip: 'Increment',
-      child: Icon(Icons.add),
-    );
-  }
+  FloatingActionButton build(BuildContext context) => FloatingActionButton(
+    onPressed: increment,
+    tooltip: 'Increment',
+    child: Icon(Icons.add),
+  );
 }

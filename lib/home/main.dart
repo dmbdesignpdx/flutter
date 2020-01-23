@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'body.dart';
 
 
-// Home
 class Home extends StatelessWidget {
   final String title;
 
@@ -13,10 +12,12 @@ class Home extends StatelessWidget {
   Scaffold build(BuildContext context) => Scaffold(
     backgroundColor: Colors.grey[100],
     appBar: AppBar(
+      backgroundColor: Colors.grey[100],
       title: Text(
         title,
         style: TextStyle(
           fontFamily: 'Roboto',
+          color: Colors.black,
         ),
       ),
     ),

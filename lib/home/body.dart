@@ -3,6 +3,8 @@ import 'dart:async';
 
 import '../utils/get.dart';
 import '../ui/card.dart';
+import '../ui/loader.dart';
+import '../ui/error.dart';
 
 
 // HomeBody
@@ -31,11 +33,10 @@ class _HomeBody extends State<HomeBody> {
       builder: (BuildContext context, AsyncSnapshot snapshot) {
         if (!snapshot.hasData) {
           // Loader
-          // ToDo: create loader
-          return Center(child: Text('Loading...'));
+          return Loader();
         } else if (snapshot.hasError) {
           // Error
-          return Center(child: Text('There was an error, try again.'));
+          return Err();
         }
 
         // Planet List

@@ -6,15 +6,15 @@ import 'home/main.dart';
 
 // App
 class MyApp extends StatelessWidget {
+  final String appTitle = 'Planets of Star Wars';
+
   @override
-  MaterialApp build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Flutter App',
-      theme: AppTheme.main,
-      home: Home('Planets'),
-    );
-  }
+  MaterialApp build(BuildContext context) => MaterialApp(
+    debugShowCheckedModeBanner: false,
+    title: appTitle,
+    theme: AppTheme.main,
+    home: Home(appTitle),
+  );
 }
 
 
