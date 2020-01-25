@@ -11,11 +11,11 @@ class AppCard extends StatefulWidget {
   final String population;
   
   const AppCard({
-    @required Key key,
     @required this.title,
     @required this.terrain,
     @required this.climate,
     @required this.population,
+    @required Key key,
   }) : super(key: key);
 
   @override
