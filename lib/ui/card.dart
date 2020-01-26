@@ -5,18 +5,18 @@ import '../utils/animation.dart';
 
 // AppCard
 class AppCard extends StatefulWidget {
-  final String title;
-  final String terrain;
-  final String climate;
-  final String population;
-  
   const AppCard({
     @required this.title,
-    @required this.terrain,
-    @required this.climate,
-    @required this.population,
+    @required this.first,
+    @required this.second,
+    @required this.third,
     @required Key key,
   }) : super(key: key);
+
+  final String title;
+  final Map<String, dynamic> first;
+  final Map<String, dynamic> second;
+  final Map<String, dynamic> third;
 
   @override
   State createState() => _AppCardState();
@@ -49,7 +49,10 @@ class _AppCardState extends State<AppCard> {
 
   // Widget
   @override
-  Widget build(BuildContext context) => GestureDetector(
+  Widget build(BuildContext context) {
+    
+
+    return GestureDetector(
     // Actions
     onTap: () {
       _cardExpand();
@@ -102,7 +105,7 @@ class _AppCardState extends State<AppCard> {
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: <Widget>[
 
-                  // Terrain
+                  // First
                   Container(
                     margin: const EdgeInsets.only(top: 15),
                     child: RichText(
@@ -111,15 +114,15 @@ class _AppCardState extends State<AppCard> {
                         children: <TextSpan>[
                           TextSpan(
                             style: TextStyle(fontWeight: FontWeight.w700),
-                            text: 'Terrain: ',
+                            text: '${widget.first['name']}: ',
                           ),
-                          TextSpan(text: '${widget.terrain}'),
+                          TextSpan(text: '${widget.first['data']}'),
                         ]
                       ),
                     ),
                   ),
 
-                  // Climate
+                  // Second
                   Container(
                     margin: const EdgeInsets.only(top: 15),
                     child: RichText(
@@ -128,14 +131,15 @@ class _AppCardState extends State<AppCard> {
                         children: <TextSpan>[
                           TextSpan(
                             style: TextStyle(fontWeight: FontWeight.w700),
-                            text: 'Climate: ',
+                            text: '${widget.second['name']}: ',
                           ),
-                          TextSpan(text: '${widget.climate}'),
+                          TextSpan(text: '${widget.second['data']}'),
                         ]
                       ),
                     ),
                   ),
-                  // Climate
+
+                  // Third
                   Container(
                     margin: const EdgeInsets.only(top: 15),
                     child: RichText(
@@ -144,9 +148,9 @@ class _AppCardState extends State<AppCard> {
                         children: <TextSpan>[
                           TextSpan(
                             style: TextStyle(fontWeight: FontWeight.w700),
-                            text: 'Population: ',
+                            text: '${widget.third['name']}: ',
                           ),
-                          TextSpan(text: '${widget.population}'),
+                          TextSpan(text: '${widget.third['data']}'),
                         ]
                       ),
                     ),
@@ -160,4 +164,5 @@ class _AppCardState extends State<AppCard> {
       ),
     ),
   );
+  }
 }

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
 
+import '../ui/drawer.dart';
 import '../utils/get.dart';
 import 'body.dart';
 import '../ui/loader.dart';
@@ -9,12 +10,12 @@ import '../ui/error.dart';
 
 // Home
 class Home extends StatefulWidget {
-  final String title;
-
   const Home({
     @required this.title,
     @required Key key,
   });
+
+  final String title;
 
   @override
   _HomeState createState() => _HomeState();
@@ -35,7 +36,7 @@ class _HomeState extends State<Home> {
   void initState() {
     super.initState();
     
-    _planets = Get('https://swapi.co/api/planets').jsonData; 
+    _planets = Get('https://swapi.co/api/planets').jsonData;
   }
 
   @override
@@ -44,11 +45,16 @@ class _HomeState extends State<Home> {
     appBar: AppBar(
       brightness: Brightness.light,
       backgroundColor: Colors.grey[100],
-      leading: IconButton(
-        icon: Icon(Icons.menu),
-        color: Colors.black,
-        enableFeedback: true,
-        onPressed: () {},
+      leading: Builder(
+        builder: (BuildContext context) =>
+          IconButton(
+            icon: Icon(Icons.menu),
+            color: Colors.black,
+            enableFeedback: true,
+            onPressed: () {
+              Scaffold.of(context).openDrawer();
+            },
+          ),
       ),
       title: Text(
         widget.title,
@@ -81,5 +87,6 @@ class _HomeState extends State<Home> {
         );
       },
     ),
+    drawer: AppDrawer('Planets'),
   );
 }
