@@ -4,6 +4,7 @@ import 'utils/theme.dart';
 import 'people/index.dart';
 import 'planets/index.dart';
 import 'starships/index.dart';
+import 'home/index.dart';
 
 
 // App
@@ -13,7 +14,7 @@ class MyApp extends StatelessWidget {
     debugShowCheckedModeBanner: false,
     title: 'Star Wars',
     theme: AppTheme.main,
-    initialRoute: '/planets',
+    home: Home(),
     routes: {
       '/planets' : (context) => Planets(),
       '/people' : (context) => People(),

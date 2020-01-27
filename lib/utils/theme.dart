@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 @immutable
 class AppTheme {
-  static ThemeData main = ThemeData(
+  static final ThemeData main = ThemeData(
     primaryColor: Colors.teal,
     accentColor: Colors.black,
     textTheme: TextTheme(
@@ -42,6 +42,15 @@ class AppTheme {
         fontSize: 18,
         fontWeight: FontWeight.w400,
         color: Colors.black,
+      ),
+
+      // Button
+      button: TextStyle(
+        fontFamily: 'Space',
+        fontFamilyFallback: ['Menlo'],
+        fontSize: 22,
+        fontWeight: FontWeight.w700,
+        color: Colors.white,
       ),
     
     ),

@@ -1,31 +1,34 @@
 import 'package:flutter/material.dart';
 
-import '../utils/get.dart';
-import '../ui/cardlist.dart';
+import '../ui/button.dart';
 
 
 // HomeBody
 class HomeBody extends StatelessWidget {
-  const HomeBody({
-    @required this.data,
-    this.sort,
-    Key key,
-  }) : super(key: key);
-
-  final List<dynamic> data;
-  final bool sort;
-  
   @override
   Widget build(BuildContext context) {
-    List<Object> _planets = data.map((item) =>
-      GetPlanets.fromJSON(item)
-    ).toList(growable: false);    
-
     return SafeArea(
-      child: ListView(
+      child: Column(
+        mainAxisSize: MainAxisSize.max,
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
-          ...CardList(_planets).sort(sort),
-          SizedBox(height: 18,),
+
+          AppButton(
+            name: 'Planets',
+            link: '/planets',
+          ),
+          
+          AppButton(
+            name: 'Characters',
+            link: '/people',
+          ),
+
+          AppButton(
+            name: 'Starships',
+            link: '/starships',
+          ),
+
         ],
       ),
     );
