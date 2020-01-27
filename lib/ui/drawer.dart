@@ -14,7 +14,12 @@ class AppDrawer extends StatelessWidget {
     return Drawer(
       child: ListView(
         children: <Widget>[
+
+          // Planets
           ListTile(
+            onTap: () {
+              Navigator.pushNamed(context, '/planets');
+            },
             leading: Icon(
               Icons.public,
               color: current == 'Planets' ? _teal : _grey,
@@ -27,19 +32,43 @@ class AppDrawer extends StatelessWidget {
               ),
             ),
           ),
+
+          // People
           ListTile(
+            onTap: () {
+              Navigator.pushNamed(context, '/people');
+            },
             leading: Icon(
               Icons.people_outline,
               color: current == 'People' ? _teal : _grey,
             ),
             title: Text(
-              'People', 
+              'Characters', 
               style: TextStyle(
                 fontSize: 18,
                 color: current == 'People' ? _teal : _grey,
               ),
             ),
           ),
+          
+          // Starships
+          ListTile(
+            onTap: () {
+              Navigator.pushNamed(context, '/starships');
+            },
+            leading: Icon(
+              Icons.airplanemode_active,
+              color: current == 'Starships' ? _teal : _grey,
+            ),
+            title: Text(
+              'Starships', 
+              style: TextStyle(
+                fontSize: 18,
+                color: current == 'Starships' ? _teal : _grey,
+              ),
+            ),
+          ),
+
         ],
       ),
     );

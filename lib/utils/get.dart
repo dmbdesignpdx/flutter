@@ -19,8 +19,8 @@ class Get {
 }
 
 
-class Planets {
-  const Planets({
+class GetPlanets {
+  const GetPlanets({
     this.name,
     this.first,
     this.second,
@@ -32,8 +32,8 @@ class Planets {
   final Map<String, dynamic> second;
   final Map<String, dynamic> third;
 
-  factory Planets.fromJSON(Map<String, dynamic> json) {
-    return Planets(
+  factory GetPlanets.fromJSON(Map<String, dynamic> json) {
+    return GetPlanets(
       name: json['name'],
       first: { 'name': 'Terrain', 'data': json['terrain'] },
       second: { 'name': 'Climate', 'data': json['climate'] },
@@ -43,8 +43,8 @@ class Planets {
 }
 
 
-class People {
-  const People({
+class GetPeople {
+  const GetPeople({
     this.name,
     this.first,
     this.second,
@@ -56,12 +56,36 @@ class People {
   final Map<String, dynamic> second;
   final Map<String, dynamic> third;
 
-  factory People.fromJSON(Map<String, dynamic> json) {
-    return People(
+  factory GetPeople.fromJSON(Map<String, dynamic> json) {
+    return GetPeople(
       name: json['name'],
       first: { 'name': 'Birth Year', 'data': json['birth_year'] },
       second: { 'name': 'Height', 'data': json['height'] },
       third: { 'name': 'Eye Color', 'data': json['eye_color'] },
+    );
+  }
+}
+
+
+class GetStarships {
+  const GetStarships({
+    this.name,
+    this.first,
+    this.second,
+    this.third,
+  });
+
+  final String name;
+  final Map<String, dynamic> first;
+  final Map<String, dynamic> second;
+  final Map<String, dynamic> third;
+
+  factory GetStarships.fromJSON(Map<String, dynamic> json) {
+    return GetStarships(
+      name: json['name'],
+      first: { 'name': 'Model', 'data': json['model'] },
+      second: { 'name': 'Manufacturer', 'data': json['manufacturer'] },
+      third: { 'name': 'Class', 'data': json['starship_class'] },
     );
   }
 }

@@ -4,9 +4,9 @@ import '../utils/get.dart';
 import '../ui/cardlist.dart';
 
 
-// HomeBody
-class HomeBody extends StatelessWidget {
-  const HomeBody({
+// StarshipBody
+class StarshipBody extends StatelessWidget {
+  const StarshipBody({
     @required this.data,
     this.sort,
     Key key,
@@ -17,14 +17,14 @@ class HomeBody extends StatelessWidget {
   
   @override
   Widget build(BuildContext context) {
-    List<Object> _planets = data.map((item) =>
-      GetPlanets.fromJSON(item)
+    List<Object> _people = data.map((item) =>
+      GetStarships.fromJSON(item)
     ).toList(growable: false);    
 
     return SafeArea(
       child: ListView(
         children: <Widget>[
-          ...CardList(_planets).sort(sort),
+          ...CardList(_people).sort(sort),
           SizedBox(height: 18,),
         ],
       ),

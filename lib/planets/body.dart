@@ -4,9 +4,9 @@ import '../utils/get.dart';
 import '../ui/cardlist.dart';
 
 
-// HomeBody
-class HomeBody extends StatelessWidget {
-  const HomeBody({
+// PlanetsBody
+class PlanetsBody extends StatelessWidget {
+  const PlanetsBody({
     @required this.data,
     this.sort,
     Key key,

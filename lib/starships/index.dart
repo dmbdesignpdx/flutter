@@ -3,27 +3,21 @@ import 'dart:async';
 
 import '../ui/drawer.dart';
 import '../utils/get.dart';
-import 'body.dart';
+import './body.dart';
 import '../ui/loader.dart';
 import '../ui/error.dart';
 
 
-// Home
-class Home extends StatefulWidget {
-  const Home({
-    @required this.title,
-    @required Key key,
-  });
-
-  final String title;
-
+// Starship
+class Starships extends StatefulWidget {
   @override
-  _HomeState createState() => _HomeState();
+  _StarshipsState createState() => _StarshipsState();
 }
 
-// Home State
-class _HomeState extends State<Home> {
-  Future<Map> _planets;
+// Starship State
+class _StarshipsState extends State<Starships> {
+  static const String _title = 'Starships';
+  Future<Map> _starship;
   bool _sort = true;
 
   void _setSort() {
@@ -36,7 +30,7 @@ class _HomeState extends State<Home> {
   void initState() {
     super.initState();
     
-    _planets = Get('https://swapi.co/api/planets').jsonData;
+    _starship = Get('https://swapi.co/api/starships').jsonData;
   }
 
   @override
@@ -57,7 +51,7 @@ class _HomeState extends State<Home> {
           ),
       ),
       title: Text(
-        widget.title,
+        _title,
         textAlign: TextAlign.start,
         style: TextStyle(
           fontFamily: 'Roboto',
@@ -76,17 +70,17 @@ class _HomeState extends State<Home> {
       ],
     ),
     body: FutureBuilder(
-      future: _planets,
+      future: _starship,
       builder: (BuildContext context, AsyncSnapshot snapshot) {
         if (!snapshot.hasData) return Loader();
         else if (snapshot.hasError) return Err();
-        return HomeBody(
+        return StarshipBody(
           data: snapshot.data['results'],
           sort: _sort,
           key: UniqueKey(),
         );
       },
     ),
-    drawer: AppDrawer('Planets'),
+    drawer: AppDrawer('Starship'),
   );
 }

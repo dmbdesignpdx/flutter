@@ -12,7 +12,7 @@ class AppTheme {
       display1: TextStyle(
         fontFamily: 'Space',
         fontFamilyFallback: ['Menlo'],
-        fontSize: 45.0,
+        fontSize: 45,
         fontWeight: FontWeight.w400,
         color: Colors.teal,
       ),
@@ -21,7 +21,7 @@ class AppTheme {
       headline: TextStyle(
         fontFamily: 'Space',
         fontFamilyFallback: ['Menlo'],
-        fontSize: 36.0,
+        fontSize: 36,
         fontWeight: FontWeight.w700,
         color: Colors.grey[700],
       ),
@@ -30,7 +30,7 @@ class AppTheme {
       title: TextStyle(
         fontFamily: 'Space',
         fontFamilyFallback: ['Menlo'],
-        fontSize: 30.0,
+        fontSize: 27,
         fontWeight: FontWeight.w700,
         color: Colors.teal[600],
       ),
@@ -39,7 +39,7 @@ class AppTheme {
       body1: TextStyle(
         fontFamily: 'Space',
         fontFamilyFallback: ['Menlo'],
-        fontSize: 18.0,
+        fontSize: 18,
         fontWeight: FontWeight.w400,
         color: Colors.black,
       ),

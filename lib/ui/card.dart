@@ -8,9 +8,9 @@ class AppCard extends StatefulWidget {
   const AppCard({
     @required this.title,
     @required this.first,
-    @required this.second,
-    @required this.third,
-    @required Key key,
+    this.second,
+    this.third,
+    Key key,
   }) : super(key: key);
 
   final String title;
@@ -62,7 +62,7 @@ class _AppCardState extends State<AppCard> {
     child: AnimatedContainer(
       duration: AppAnimate.duration,
       curve: AppAnimate.curve,
-      height: _initial ? 120 : 270,
+      height: _initial ? 110 : 330,
       margin: const EdgeInsets.fromLTRB(18, 18, 18, 0),
       padding: const EdgeInsets.all(30),
       decoration: BoxDecoration(
@@ -90,6 +90,7 @@ class _AppCardState extends State<AppCard> {
               child: Text(
                 '${widget.title}',
                 style: Theme.of(context).textTheme.title,
+                overflow: TextOverflow.ellipsis,
               ),
             ),
           ),
@@ -100,15 +101,17 @@ class _AppCardState extends State<AppCard> {
             curve: AppAnimate.curve,
             opacity: !_showText ? 0 : 1,
             child: Container(
-              height: !_showText ? 0 : 160,
+              height: !_showText ? 0 : 215,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: <Widget>[
 
                   // First
                   Container(
+                    height: 56,
                     margin: const EdgeInsets.only(top: 15),
                     child: RichText(
+                      overflow: TextOverflow.fade,
                       text: TextSpan(
                         style: Theme.of(context).textTheme.body1,
                         children: <TextSpan>[
@@ -124,8 +127,10 @@ class _AppCardState extends State<AppCard> {
 
                   // Second
                   Container(
+                    height: 56,
                     margin: const EdgeInsets.only(top: 15),
                     child: RichText(
+                      overflow: TextOverflow.fade,
                       text: TextSpan(
                         style: Theme.of(context).textTheme.body1,
                         children: <TextSpan>[
@@ -141,8 +146,10 @@ class _AppCardState extends State<AppCard> {
 
                   // Third
                   Container(
+                    height: 56,
                     margin: const EdgeInsets.only(top: 15),
                     child: RichText(
+                      overflow: TextOverflow.fade,
                       text: TextSpan(
                         style: Theme.of(context).textTheme.body1,
                         children: <TextSpan>[
