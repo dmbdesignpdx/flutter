@@ -5,10 +5,12 @@ class AppButton extends StatelessWidget {
   const AppButton({
     @required this.name,
     @required this.link,
+    this.disabled = false,
   });
 
   final String name;
   final String link;
+  final bool disabled;
 
   @override
   Widget build(BuildContext context) {
@@ -16,8 +18,8 @@ class AppButton extends StatelessWidget {
       margin: const EdgeInsets.fromLTRB(18, 9, 18, 9),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(6),
-        color: Colors.teal,
-        boxShadow: <BoxShadow> [
+        color: disabled ? Colors.teal[200] : Colors.teal,
+        boxShadow: disabled ? null : <BoxShadow> [
           BoxShadow(
             color: Color(0x44000000),
             blurRadius: 3,
@@ -27,7 +29,7 @@ class AppButton extends StatelessWidget {
       ),
       child: FlatButton(
         onPressed: () {
-          Navigator.pushNamed(context, '$link');
+          if (!disabled) Navigator.pushNamed(context, '$link');
         },
         child: Container(
           padding: const EdgeInsets.all(21),

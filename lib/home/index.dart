@@ -1,29 +1,64 @@
 import 'package:flutter/material.dart';
 
-import './body.dart';
+import '../ui/button.dart';
 
 
-// Home
 class Home extends StatelessWidget {
-  static const String _title = 'Star Wars API';
+  const Home(this.title);
+
+  final String title;
 
   @override
   Scaffold build(BuildContext context) {
     return Scaffold(
-          backgroundColor: Colors.grey[100],
-    appBar: AppBar(
-      brightness: Brightness.light,
       backgroundColor: Colors.grey[100],
-      title: Text(
-        _title,
-        textAlign: TextAlign.start,
-        style: TextStyle(
-          fontFamily: 'Roboto',
-          color: Colors.black,
-        ),
+      body: SafeArea(
+      child: Column(
+        mainAxisSize: MainAxisSize.max,
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: <Widget>[
+
+          // Header
+          Container(
+            margin: const EdgeInsets.fromLTRB(18, 45, 18, 45),
+            child: Text(
+              title,
+              style: Theme.of(context).textTheme.display1.copyWith(
+                color: Colors.black,
+              ),
+            ),
+          ),
+
+          // Buttons
+          AppButton(
+            name: 'Characters',
+            link: '/people',
+          ),
+
+          AppButton(
+            name: 'Planets',
+            link: '/planets',
+          ),
+
+          AppButton(
+            name: 'Species',
+            link: '/species',
+          ),
+
+          AppButton(
+            name: 'Starships',
+            link: '/starships',
+          ),
+
+          AppButton(
+            name: 'Vehicles',
+            link: '/vehicles',
+          ),
+
+        ],
       ),
     ),
-      body: HomeBody(),
     );
   }
 }

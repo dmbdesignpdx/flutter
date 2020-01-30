@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
 
+import '../utils/get.dart' show Get;
 import '../ui/drawer.dart';
-import '../utils/get.dart';
 import './body.dart';
 import '../ui/loader.dart';
 import '../ui/error.dart';
+import '../ui/appbar.dart';
 
 
 // People
@@ -16,9 +17,9 @@ class People extends StatefulWidget {
 
 // People State
 class _PeopleState extends State<People> {
-  static const String _title = 'Characters';
+  static const _title = 'Characters';
   Future<Map> _people;
-  bool _sort = true;
+  var _sort = true;
 
   void _setSort() {
     setState(() {
@@ -34,53 +35,30 @@ class _PeopleState extends State<People> {
   }
 
   @override
-  Scaffold build(BuildContext context) => Scaffold(
-    backgroundColor: Colors.grey[100],
-    appBar: AppBar(
-      brightness: Brightness.light,
+  Scaffold build(BuildContext context) {
+    return Scaffold(
       backgroundColor: Colors.grey[100],
-      leading: Builder(
-        builder: (BuildContext context) =>
-          IconButton(
-            icon: Icon(Icons.menu),
-            color: Colors.black,
-            enableFeedback: true,
-            onPressed: () {
-              Scaffold.of(context).openDrawer();
-            },
-          ),
+      appBar: AppBar(
+        brightness: Brightness.light,
+        backgroundColor: Colors.grey[100],
+        leading: NavLead(),
+        title: NavTitle(_title),
+        actions: <Widget>[
+          NavSort(_setSort),
+        ],
       ),
-      title: Text(
-        _title,
-        textAlign: TextAlign.start,
-        style: TextStyle(
-          fontFamily: 'Roboto',
-          color: Colors.black,
-        ),
+      body: FutureBuilder(
+        future: _people,
+        builder: (BuildContext context, AsyncSnapshot snapshot) {
+          if (!snapshot.hasData) return Loader();
+          else if (snapshot.hasError) return Err();
+          return PeopleBody(
+            data: snapshot.data['results'],
+            sort: _sort,
+          );
+        },
       ),
-      actions: <Widget>[
-        IconButton(
-          icon: Icon(Icons.sort_by_alpha),
-          color: Colors.black,
-          enableFeedback: true,
-          onPressed: () {
-            _setSort();
-          },
-        ),
-      ],
-    ),
-    body: FutureBuilder(
-      future: _people,
-      builder: (BuildContext context, AsyncSnapshot snapshot) {
-        if (!snapshot.hasData) return Loader();
-        else if (snapshot.hasError) return Err();
-        return PeopleBody(
-          data: snapshot.data['results'],
-          sort: _sort,
-          key: UniqueKey(),
-        );
-      },
-    ),
-    drawer: AppDrawer('People'),
-  );
+      drawer: AppDrawer(),
+    );
+  }
 }

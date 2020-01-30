@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../utils/get.dart';
+import '../utils/get.dart' show GetPeople;
 import '../ui/cardlist.dart';
 
 
@@ -8,23 +8,22 @@ import '../ui/cardlist.dart';
 class PeopleBody extends StatelessWidget {
   const PeopleBody({
     @required this.data,
-    this.sort,
-    Key key,
-  }) : super(key: key);
+    this.sort = true,
+  });
 
   final List<dynamic> data;
   final bool sort;
   
   @override
   Widget build(BuildContext context) {
-    List<Object> _people = data.map((item) =>
-      GetPeople.fromJSON(item)
-    ).toList(growable: false);    
+    List<Object> _people = data
+      .map((item) => GetPeople.fromJSON(item))
+      .toList(growable: false);    
 
     return SafeArea(
       child: ListView(
         children: <Widget>[
-          ...CardList(_people).sort(sort),
+          ...sortCards(_people, sort),
           SizedBox(height: 18,),
         ],
       ),

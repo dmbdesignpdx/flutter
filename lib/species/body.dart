@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
-import '../utils/get.dart' show GetStarships;
+import '../utils/get.dart' show GetSpecies;
 import '../ui/cardlist.dart';
 
 
-// StarshipBody
-class StarshipBody extends StatelessWidget {
-  const StarshipBody({
+// SpeciesBody
+class SpeciesBody extends StatelessWidget {
+  const SpeciesBody({
     @required this.data,
     this.sort = true,
   });
@@ -16,14 +16,14 @@ class StarshipBody extends StatelessWidget {
   
   @override
   Widget build(BuildContext context) {
-    List<Object> _people = data
-      .map((item) => GetStarships.fromJSON(item))
-      .toList(growable: false);
+    List<Object> _species = data
+      .map((item) => GetSpecies.fromJSON(item))
+      .toList(growable: false);    
 
     return SafeArea(
       child: ListView(
         children: <Widget>[
-          ...sortCards(_people, sort),
+          ...sortCards(_species, sort),
           SizedBox(height: 18,),
         ],
       ),

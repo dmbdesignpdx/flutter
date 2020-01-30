@@ -9,16 +9,16 @@ import '../ui/error.dart';
 import '../ui/appbar.dart';
 
 
-// Starship
-class Starships extends StatefulWidget {
+// Species
+class Species extends StatefulWidget {
   @override
-  _StarshipsState createState() => _StarshipsState();
+  _SpeciesState createState() => _SpeciesState();
 }
 
-// Starship State
-class _StarshipsState extends State<Starships> {
-  static const String _title = 'Starships';
-  Future<Map> _starship;
+// Species State
+class _SpeciesState extends State<Species> {
+  static const String _title = 'Species';
+  Future<Map> _species;
   bool _sort = true;
 
   void _setSort() {
@@ -31,7 +31,7 @@ class _StarshipsState extends State<Starships> {
   void initState() {
     super.initState();
     
-    _starship = Get('https://swapi.co/api/${_title.toLowerCase()}').jsonData;
+    _species = Get('https://swapi.co/api/${_title.toLowerCase()}').jsonData;
   }
 
   @override
@@ -48,11 +48,11 @@ class _StarshipsState extends State<Starships> {
         ],
       ),
       body: FutureBuilder(
-        future: _starship,
+        future: _species,
         builder: (BuildContext context, AsyncSnapshot snapshot) {
           if (!snapshot.hasData) return Loader();
           else if (snapshot.hasError) return Err();
-          return StarshipBody(
+          return SpeciesBody(
             data: snapshot.data['results'],
             sort: _sort,
           );

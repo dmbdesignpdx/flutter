@@ -50,8 +50,6 @@ class _AppCardState extends State<AppCard> {
   // Widget
   @override
   Widget build(BuildContext context) {
-    
-
     return GestureDetector(
     // Actions
     onTap: () {

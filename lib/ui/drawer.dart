@@ -1,72 +1,64 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/utils/animation.dart';
 
+import '../ui/navitem.dart';
 
 class AppDrawer extends StatelessWidget {
-  const AppDrawer(this.current);
-
-  final String current;
-
   @override
   Drawer build(BuildContext context) {
-    final Color _teal = Colors.teal;
-    final Color _grey = Colors.grey[600];
-
     return Drawer(
       child: ListView(
         children: <Widget>[
 
-          // Planets
-          ListTile(
-            onTap: () {
-              Navigator.pushNamed(context, '/planets');
-            },
-            leading: Icon(
-              Icons.public,
-              color: current == 'Planets' ? _teal : _grey,
-            ),
-            title: Text(
-              'Planets', 
+          DrawerHeader(
+            padding: const EdgeInsets.fromLTRB(18, 45, 60, 0),
+            margin: EdgeInsets.zero,
+            curve: AppAnimate.curve,
+            duration: AppAnimate.duration,
+            child: Text(
+              'Star Wars Universe',
               style: TextStyle(
-                fontSize: 18,
-                color: current == 'Planets' ? _teal : _grey,
+                fontFamily: 'Space',
+                fontSize: 24,
+                color: Colors.black,
               ),
             ),
           ),
 
-          // People
-          ListTile(
-            onTap: () {
-              Navigator.pushNamed(context, '/people');
-            },
-            leading: Icon(
-              Icons.people_outline,
-              color: current == 'People' ? _teal : _grey,
-            ),
-            title: Text(
-              'Characters', 
-              style: TextStyle(
-                fontSize: 18,
-                color: current == 'People' ? _teal : _grey,
-              ),
-            ),
+          NavItem(
+            label: 'Characters',
+            link: '/people',
+            icon: Icons.people_outline,
           ),
           
-          // Starships
-          ListTile(
-            onTap: () {
-              Navigator.pushNamed(context, '/starships');
-            },
-            leading: Icon(
-              Icons.airplanemode_active,
-              color: current == 'Starships' ? _teal : _grey,
-            ),
-            title: Text(
-              'Starships', 
-              style: TextStyle(
-                fontSize: 18,
-                color: current == 'Starships' ? _teal : _grey,
-              ),
-            ),
+          NavItem(
+            label: 'Planets',
+            link: '/planets',
+            icon: Icons.public,
+          ),
+
+          NavItem(
+            label: 'Species',
+            link: '/species',
+            icon: Icons.android,
+          ),
+          
+          NavItem(
+            label: 'Starships',
+            link: '/starships',
+            icon: Icons.airplanemode_active,
+          ),
+          
+          NavItem(
+            label: 'Vehicles',
+            link: '/vehicles',
+            icon: Icons.train,
+          ),
+
+          NavItem(
+            label: 'About',
+            link: '/about',
+            icon: Icons.comment,
           ),
 
         ],
