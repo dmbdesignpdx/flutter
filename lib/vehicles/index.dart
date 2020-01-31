@@ -17,7 +17,9 @@ class Vehicles extends StatefulWidget {
 
 // Vehicles State
 class _VehiclesState extends State<Vehicles> {
-  static const String _title = 'Vehicles';
+  static const _title = 'Vehicles';
+
+  // State
   Future<Map> _vehicles;
   bool _sort = true;
 

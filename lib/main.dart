@@ -22,11 +22,11 @@ class MyApp extends StatelessWidget {
       theme: AppTheme.main,
       home: Home(_title),
       routes: {
+        '/characters' : (context) => People(),
         '/planets' : (context) => Planets(),
-        '/people' : (context) => People(),
+        '/species' : (context) => Species(),
         '/starships' : (context) => Starships(),
         '/vehicles' : (context) => Vehicles(),
-        '/species' : (context) => Species(),
         '/about' : (context) => About(),
       },
     );

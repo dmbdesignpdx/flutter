@@ -2,11 +2,13 @@ import 'package:flutter/material.dart';
 
 
 class AppButton extends StatelessWidget {
-  const AppButton({
-    @required this.name,
-    @required this.link,
-    this.disabled = false,
-  });
+  const AppButton(
+    this.name,
+    {
+      this.link = '',
+      this.disabled = false,
+    }
+  );
 
   final String name;
   final String link;
@@ -14,6 +16,8 @@ class AppButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final String _link = link != '' ? link : '/${name.toLowerCase()}';
+
     return Container(
       margin: const EdgeInsets.fromLTRB(18, 9, 18, 9),
       decoration: BoxDecoration(
@@ -21,15 +25,15 @@ class AppButton extends StatelessWidget {
         color: disabled ? Colors.teal[200] : Colors.teal,
         boxShadow: disabled ? null : <BoxShadow> [
           BoxShadow(
-            color: Color(0x44000000),
+            color: const Color(0x44000033),
             blurRadius: 3,
-            offset: Offset(0, 2),
+            offset: const Offset(0, 2),
           )
         ],
       ),
       child: FlatButton(
         onPressed: () {
-          if (!disabled) Navigator.pushNamed(context, '$link');
+          if (!disabled) Navigator.pushNamed(context, '$_link');
         },
         child: Container(
           padding: const EdgeInsets.all(21),

@@ -9,7 +9,7 @@ class AppTheme {
     textTheme: TextTheme(
 
       // Display
-      display1: TextStyle(
+      display1: const TextStyle(
         fontFamily: 'Space',
         fontFamilyFallback: ['Menlo'],
         fontSize: 45,
@@ -36,7 +36,7 @@ class AppTheme {
       ),
 
       // Body
-      body1: TextStyle(
+      body1: const TextStyle(
         fontFamily: 'Space',
         fontFamilyFallback: ['Menlo'],
         fontSize: 18,
@@ -45,7 +45,7 @@ class AppTheme {
       ),
 
       // Button
-      button: TextStyle(
+      button: const TextStyle(
         fontFamily: 'Space',
         fontFamilyFallback: ['Menlo'],
         fontSize: 22,

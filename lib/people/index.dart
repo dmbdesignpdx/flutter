@@ -18,6 +18,8 @@ class People extends StatefulWidget {
 // People State
 class _PeopleState extends State<People> {
   static const _title = 'Characters';
+
+  // State
   Future<Map> _people;
   var _sort = true;
 
@@ -39,7 +41,6 @@ class _PeopleState extends State<People> {
     return Scaffold(
       backgroundColor: Colors.grey[100],
       appBar: AppBar(
-        brightness: Brightness.light,
         backgroundColor: Colors.grey[100],
         leading: NavLead(),
         title: NavTitle(_title),

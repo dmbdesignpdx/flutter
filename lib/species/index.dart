@@ -17,7 +17,9 @@ class Species extends StatefulWidget {
 
 // Species State
 class _SpeciesState extends State<Species> {
-  static const String _title = 'Species';
+  static const _title = 'Species';
+
+  // State
   Future<Map> _species;
   bool _sort = true;
 
@@ -39,7 +41,6 @@ class _SpeciesState extends State<Species> {
     return Scaffold(
       backgroundColor: Colors.grey[100],
       appBar: AppBar(
-        brightness: Brightness.light,
         backgroundColor: Colors.grey[100],
         leading: NavLead(),
         title: NavTitle(_title),

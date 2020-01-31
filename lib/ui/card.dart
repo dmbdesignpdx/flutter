@@ -24,11 +24,10 @@ class AppCard extends StatefulWidget {
 
 // AppCard State
 class _AppCardState extends State<AppCard> {
-  // States
+  // State
   bool _initial = true;
   bool _showText = false;
 
-  // State Methods
   void _cardExpand() {
     if (_showText) {
       setState(() {
@@ -47,7 +46,6 @@ class _AppCardState extends State<AppCard> {
     });
   }
 
-  // Widget
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -114,7 +112,9 @@ class _AppCardState extends State<AppCard> {
                         style: Theme.of(context).textTheme.body1,
                         children: <TextSpan>[
                           TextSpan(
-                            style: TextStyle(fontWeight: FontWeight.w700),
+                            style: const TextStyle(
+                              fontWeight: FontWeight.w700
+                            ),
                             text: '${widget.first['name']}: ',
                           ),
                           TextSpan(text: '${widget.first['data']}'),
@@ -133,7 +133,9 @@ class _AppCardState extends State<AppCard> {
                         style: Theme.of(context).textTheme.body1,
                         children: <TextSpan>[
                           TextSpan(
-                            style: TextStyle(fontWeight: FontWeight.w700),
+                            style: const TextStyle(
+                              fontWeight: FontWeight.w700
+                            ),
                             text: '${widget.second['name']}: ',
                           ),
                           TextSpan(text: '${widget.second['data']}'),
@@ -152,7 +154,9 @@ class _AppCardState extends State<AppCard> {
                         style: Theme.of(context).textTheme.body1,
                         children: <TextSpan>[
                           TextSpan(
-                            style: TextStyle(fontWeight: FontWeight.w700),
+                            style: const TextStyle(
+                              fontWeight: FontWeight.w700
+                            ),
                             text: '${widget.third['name']}: ',
                           ),
                           TextSpan(text: '${widget.third['data']}'),

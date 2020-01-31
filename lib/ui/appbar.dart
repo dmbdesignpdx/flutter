@@ -27,7 +27,7 @@ class NavTitle extends StatelessWidget {
     return Text(
         title,
         textAlign: TextAlign.start,
-        style: TextStyle(
+        style: const TextStyle(
           fontFamily: 'Roboto',
           color: Colors.black,
         ),

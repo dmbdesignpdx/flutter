@@ -12,10 +12,10 @@ class AppDrawer extends StatelessWidget {
 
           DrawerHeader(
             padding: const EdgeInsets.fromLTRB(18, 45, 60, 0),
-            margin: EdgeInsets.zero,
+            margin: const EdgeInsets.all(0),
             curve: AppAnimate.curve,
             duration: AppAnimate.duration,
-            child: Text(
+            child: const Text(
               'Star Wars Universe',
               style: TextStyle(
                 fontFamily: 'Space',
@@ -27,37 +27,31 @@ class AppDrawer extends StatelessWidget {
 
           NavItem(
             label: 'Characters',
-            link: '/people',
             icon: Icons.people_outline,
           ),
           
           NavItem(
             label: 'Planets',
-            link: '/planets',
             icon: Icons.public,
           ),
 
           NavItem(
             label: 'Species',
-            link: '/species',
             icon: Icons.android,
           ),
           
           NavItem(
             label: 'Starships',
-            link: '/starships',
             icon: Icons.airplanemode_active,
           ),
           
           NavItem(
             label: 'Vehicles',
-            link: '/vehicles',
             icon: Icons.train,
           ),
 
           NavItem(
             label: 'About',
-            link: '/about',
             icon: Icons.comment,
           ),
 

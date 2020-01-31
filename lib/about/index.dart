@@ -7,7 +7,7 @@ import '../ui/drawer.dart';
 
 
 class About extends StatelessWidget {
-  static const String _title = 'About';
+  static const _title = 'About';
   final Color _grey = Colors.grey[100];
   
   @override
@@ -35,7 +35,7 @@ class About extends StatelessWidget {
                   ),
                   TextSpan(
                     text: 'Daniel Blake',
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontWeight: FontWeight.w700,
                       decoration: TextDecoration.underline,
                     ),
@@ -61,7 +61,7 @@ class About extends StatelessWidget {
                     ),
                     TextSpan(
                       text: 'Star Wars API',
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontWeight: FontWeight.w700,
                         decoration: TextDecoration.underline,
                       ),
@@ -74,7 +74,7 @@ class About extends StatelessWidget {
                     ),
                     TextSpan(
                       text: 'Flutter',
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontWeight: FontWeight.w700,
                         decoration: TextDecoration.underline,
                       ),
@@ -92,7 +92,7 @@ class About extends StatelessWidget {
 
             Container(
               margin: const EdgeInsets.only(top: 12),
-              child: Text(
+              child: const Text(
                 'All names and references to the Star Wars franchise are the property of their respective owners.'
               ),
             ),

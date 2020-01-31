@@ -17,7 +17,9 @@ class Starships extends StatefulWidget {
 
 // Starship State
 class _StarshipsState extends State<Starships> {
-  static const String _title = 'Starships';
+  static const _title = 'Starships';
+  
+  // State
   Future<Map> _starship;
   bool _sort = true;
 
@@ -39,7 +41,6 @@ class _StarshipsState extends State<Starships> {
     return Scaffold(
       backgroundColor: Colors.grey[100],
       appBar: AppBar(
-        brightness: Brightness.light,
         backgroundColor: Colors.grey[100],
         leading: NavLead(),
         title: NavTitle(_title),

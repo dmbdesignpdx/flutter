@@ -31,30 +31,15 @@ class Home extends StatelessWidget {
           ),
 
           // Buttons
-          AppButton(
-            name: 'Characters',
-            link: '/people',
-          ),
+          AppButton('Characters'),
 
-          AppButton(
-            name: 'Planets',
-            link: '/planets',
-          ),
+          AppButton('Planets'),
 
-          AppButton(
-            name: 'Species',
-            link: '/species',
-          ),
+          AppButton('Species'),
 
-          AppButton(
-            name: 'Starships',
-            link: '/starships',
-          ),
+          AppButton('Starships'),
 
-          AppButton(
-            name: 'Vehicles',
-            link: '/vehicles',
-          ),
+          AppButton('Vehicles'),
 
         ],
       ),
