@@ -6,6 +6,7 @@ import '../ui/appbar.dart' hide NavSort;
 import '../ui/drawer.dart';
 
 
+@immutable
 class About extends StatelessWidget {
   static const _title = 'About';
   final Color _grey = Colors.grey[100];
@@ -26,6 +27,7 @@ class About extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
             
+            // First Paragraph
             RichText(
               text: TextSpan(
                 style: Theme.of(context).textTheme.body1,
@@ -50,6 +52,7 @@ class About extends StatelessWidget {
               ),
             ),
             
+            // Second Paragraph
             Container(
               margin: const EdgeInsets.only(top: 12),
               child: RichText(
@@ -90,12 +93,14 @@ class About extends StatelessWidget {
               ),
             ),
 
+            // Copyright
             Container(
               margin: const EdgeInsets.only(top: 12),
               child: const Text(
                 'All names and references to the Star Wars franchise are the property of their respective owners.'
               ),
             ),
+
           ],
         ),
       ),

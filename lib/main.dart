@@ -11,6 +11,7 @@ import 'home/index.dart';
 
 
 // App
+@immutable
 class MyApp extends StatelessWidget {
   static const _title = 'Star Wars Universe';
 
